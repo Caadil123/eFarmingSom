@@ -4,7 +4,10 @@ import Hero from "@/components/home/Hero";
 import AboutSection from "@/components/home/AboutSection";
 import ServicesSection from "@/components/home/ServicesSection";
 import StatsSection from "@/components/home/StatsSection";
+import WhyChooseUs from "@/components/home/WhyChooseUs";
 import NewsTestimonials from "@/components/home/NewsTestimonials";
+import NewsArticles from "@/components/home/NewsArticles";
+import ContactSection from "@/components/home/ContactSection";
 import Footer from "@/components/layout/Footer";
 
 export default function Home() {
@@ -16,7 +19,10 @@ export default function Home() {
       <AboutSection />
       <ServicesSection />
       <StatsSection />
+      <WhyChooseUs />
       <NewsTestimonials />
+      <NewsArticles />
+      <ContactSection />
       <Footer />
     </main>
   );

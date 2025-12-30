@@ -6,30 +6,31 @@ const ServicesSection = () => {
     const services = [
         {
             title: "Agri-Input Supply",
-            desc: "Providing high-quality seeds, fertilizers, and tools directly to farmers at affordable rates.",
-            image: "https://images.unsplash.com/photo-1615811361523-6bd03c770b31?auto=format&fit=crop&q=80&w=800",
+            desc: "Certified seeds, fertilizers, and crop protection products that enhance yield and quality.",
+            image: "/assets/our soultion image (1).png",
             link: "/services/inputs"
         },
         {
             title: "Digital Advisory",
-            desc: "Smart farming tips, weather forecasts, and market data delivered via mobile app and SMS.",
-            image: "https://images.unsplash.com/photo-1592982537447-684748cf8721?auto=format&fit=crop&q=80&w=800",
+            desc: "On-ground and online guidance offering crop-specific, soil, and farm management solutions.",
+            image: "/assets/our soultion image (2).png",
             link: "/services/advisory"
         },
         {
-            title: "Market Linkage",
-            desc: "Connecting farmers directly with buyers, retailers, and exporters to maximize profits.",
-            image: "https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&q=80&w=800",
+            title: "Workshops & Capacity Building",
+            desc: "Hands-on programs promoting youth and women participation in agri business.",
+            image: "/assets/our soultion image (3).png",
             link: "/services/market"
         }
     ];
 
     return (
-        <section className="py-20 bg-gray-50">
+        <section className="py-20">
             <div className="container mx-auto px-4 md:px-6">
                 <div className="text-center mb-16 space-y-4">
-                    <span className="text-primary font-bold tracking-widest text-xs uppercase">What We Offer</span>
                     <h2 className="text-4xl font-bold text-gray-900">OUR SOLUTIONS</h2>
+                    <p>We deliver end-to-end agri solutions empowering Somali farmers with quality <br></br>
+                        inputs, training, digital finance, and market access.</p>
                     <div className="w-24 h-1 bg-primary mx-auto rounded-full"></div>
                 </div>
 
@@ -55,7 +56,7 @@ const ServicesSection = () => {
                                     {service.desc}
                                 </p>
 
-                                <Link href={service.link} className="inline-flex items-center text-sm font-bold text-primary group-hover:text-emerald-800 transition-colors">
+                                <Link href={service.link} className="inline-flex items-center px-4 py-2 text-sm text-white bg-[#006737] rounded-full py-2 px-6 hover:bg-emerald-600 transition-colors">
                                     LEARN MORE <ArrowRight size={16} className="ml-2 group-hover:translate-x-1 transition-transform" />
                                 </Link>
                             </div>

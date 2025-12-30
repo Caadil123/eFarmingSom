@@ -19,6 +19,9 @@
   
   --border: #e5e7eb; /* Gray-200 */
   
+  --success: #22c55e;
+  --success-foreground: #ffffff;
+
   --radius: 0.5rem;
 }
 
@@ -37,6 +40,9 @@
   --color-card: var(--card);
   --color-card-foreground: var(--card-foreground);
   
+  --color-success: var(--success);
+  --color-success-foreground: var(--success-foreground);
+
   --color-border: var(--border);
   
   --radius-lg: var(--radius);
