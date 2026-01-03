@@ -55,7 +55,7 @@ const Footer = () => {
                                 placeholder="Email"
                                 className="w-full bg-[#f3f4f6] border-none rounded-full py-3 px-6 text-gray-900 placeholder:text-gray-500 focus:ring-2 focus:ring-secondary outline-none"
                             />
-                            <button className="w-full bg-[#4ade80] hover:bg-[#22c55e] text-white font-bold py-3 px-6 rounded-full flex items-center justify-center gap-2 transition-colors uppercase text-sm tracking-wider">
+                            <button className="w-full bg-~[#4ade80] hover:bg-[#22c55e] text-white font-bold py-3 px-6 rounded-full flex items-center justify-center gap-2 transition-colors uppercase text-sm tracking-wider">
                                 <Mail size={18} />
                                 SIGN UP
                             </button>
