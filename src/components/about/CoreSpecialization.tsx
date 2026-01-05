@@ -8,32 +8,12 @@ import {
     CreditCard
 } from "lucide-react";
 
-const CoreSpecialization = () => {
+const CoreSpecialization = ({ showAll = false }: { showAll?: boolean }) => {
     const specializations = [
         {
             title: "Agricultural Inputs & Farm Supplies",
             desc: "We provide certified seeds, quality fertilizers, and effective crop protection products that help farmers increase productivity, improve soil health, and ensure better harvests.",
             icon: <Sprout />,
-        },
-        {
-            title: "Soil Testing & Crop/Animal Health Services",
-            desc: "Professional testing services for soil fertility, plus support in managing crop diseases and livestock production for healthier, more productive farms.",
-            icon: <FlaskConical />,
-        },
-        {
-            title: "Agricultural Technology & Advisory Services",
-            desc: "Real-time advisory, weather insights, pest and disease monitoring, and digital extension services improve decision-making and yields.",
-            icon: <Smartphone />,
-        },
-        {
-            title: "Innovative Agribusiness Solutions",
-            desc: "Scalable solutions for agribusinesses include digital supply chain management, aggregation systems, cold-chain coordination, farm-to-market optimization, and data driven production planning.",
-            icon: <Lightbulb />,
-        },
-        {
-            title: "Farmer Capacity Building",
-            desc: "Hands-on training and practical workshops on modern farming practices, agribusiness, and digital tools tailored for farmers, youth, and women entrepreneurs.",
-            icon: <GraduationCap />,
         },
         {
             title: "Market Linkages & Produce Sales",
@@ -44,8 +24,31 @@ const CoreSpecialization = () => {
             title: "Agri-Fintech Solutions",
             desc: "Access affordable financing, digital credit scoring, crop insurance, and mobile payment tools that empower smallholder farmers to invest and grow confidently.",
             icon: <CreditCard />,
+        },
+        // Additional items displayed when showAll is true
+        {
+            title: "Smart Advisory & Consulting",
+            desc: "Get real-time, expert advice on crop management, pest control, and weather forecasting through our digital advisory platforms and on-ground experts.",
+            icon: <Smartphone />,
+        },
+        {
+            title: "Soil Testing & Laboratory Services",
+            desc: "Our advanced soil testing services help you understand your soil's health, ensuring efficient nutrient use and maximizing crop yields through precision agriculture.",
+            icon: <FlaskConical />,
+        },
+        {
+            title: "Training & Capacity Building",
+            desc: "We offer comprehensive training programs to equip farmers with modern skills, sustainable practices, and business management knowledge to thrive.",
+            icon: <GraduationCap />,
+        },
+        {
+            title: "Greenhouse & Irrigation Systems",
+            desc: "Deploying modern greenhouse structures and automated smart irrigation systems to enable year-round farming, water conservation, and climate resilience.",
+            icon: <Lightbulb />,
         }
     ];
+
+    const visibleItems = showAll ? specializations : specializations.slice(0, 3);
 
     return (
         <section className="py-20 bg-gray-50">
@@ -56,7 +59,7 @@ const CoreSpecialization = () => {
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 gap-y-12">
-                    {specializations.map((item, idx) => (
+                    {visibleItems.map((item, idx) => (
                         <div
                             key={idx}
                             className="group relative bg-white rounded-3xl p-8 pt-12 pb-12 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 hover:bg-gradient-to-br hover:from-green-600 hover:to-[#006737] flex flex-col items-center text-center"

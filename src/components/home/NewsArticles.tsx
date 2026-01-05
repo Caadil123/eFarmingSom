@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import PartnersSection from "../common/PartnersSection";
 
 const NewsArticles = () => {
     const articles = [
@@ -66,30 +67,8 @@ const NewsArticles = () => {
                 </div>
 
                 {/* Partners Section */}
-                <div className="border-t border-gray-200 pt-16">
-                    <div className="text-center mb-10">
-                        <h4 className="text-sm font-bold text-gray-500 uppercase tracking-widest">Trusted Partners & Supporters</h4>
-                    </div>
-
-                    <div className="flex flex-wrap justify-center items-center gap-12 md:gap-20 opacity-70 grayscale hover:grayscale-0 transition-all duration-500">
-                        {[
-                            { name: "FAO", logo: "https://placehold.co/200x80/f3f4f6/374151?text=FAO&font=montserrat" },
-                            { name: "USAID", logo: "https://placehold.co/200x80/f3f4f6/374151?text=USAID&font=montserrat" },
-                            { name: "WFP", logo: "https://placehold.co/200x80/f3f4f6/374151?text=WFP&font=montserrat" },
-                            { name: "IBS Bank", logo: "https://placehold.co/200x80/f3f4f6/374151?text=IBS+Bank&font=montserrat" },
-                            { name: "Gargaara", logo: "https://placehold.co/200x80/f3f4f6/374151?text=Gargaara&font=montserrat" }
-                        ].map((partner, idx) => (
-                            <div key={idx} className="relative w-32 h-16 md:w-40 md:h-20">
-                                {/* Use regular img tag for external images */}
-                                <img
-                                    src={partner.logo}
-                                    alt={`${partner.name} Logo`}
-                                    className="w-full h-full object-contain mix-blend-multiply"
-                                />
-                            </div>
-                        ))}
-                    </div>
-                </div>
+                {/* Partners Section */}
+                <PartnersSection />
             </div>
         </section>
     );

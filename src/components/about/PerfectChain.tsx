@@ -11,7 +11,7 @@ import {
 
 const PerfectChain = () => {
     const steps = [
-        { title: "Input", icon: Package, desc: "Premium Seeds & Supplies" },
+        { title: "Agri-Input", icon: Package, desc: "Premium Seeds & Supplies" },
         { title: "Quality Control", icon: ShieldCheck, desc: "Rigorous Testing" },
         { title: "Advisory", icon: MessageSquareText, desc: "Expert Guidance" },
         { title: "Production", icon: Tractor, desc: "Efficient Farming" },

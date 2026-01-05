@@ -13,7 +13,7 @@ const PageHero = ({ title, backgroundImage = "/assets/Hero Image.jpeg" }: PageHe
             {/* Background Image */}
             <div className="absolute inset-0 z-0">
                 <Image
-                    src="/assets/our soultion image (1).png"
+                    src={backgroundImage}
                     alt={title}
                     fill
                     className="object-cover opacity-50"
