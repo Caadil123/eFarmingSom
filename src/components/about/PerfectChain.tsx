@@ -49,9 +49,12 @@ const PerfectChain = () => {
                                         />
                                     </div>
 
-                                    {/* Arrow icon between steps (Desktop) */}
+                                    {/* Arrow icon between steps */}
                                     {idx < steps.length - 1 && (
-                                        <div className="hidden lg:block absolute top-1/2 -right-[60%] transform -translate-y-1/2 text-gray-300 z-0">
+                                        <div className={`absolute top-1/2 -right-[35%] md:-right-[45%] lg:-right-[60%] transform -translate-y-1/2 text-gray-300 z-0 
+                                            ${(idx + 1) % 2 === 0 ? 'hidden sm:block' : 'block'} 
+                                            ${(idx + 1) % 4 === 0 ? 'md:hidden lg:block' : ''}
+                                            ${idx === steps.length - 1 ? 'hidden' : ''}`}>
                                             <ArrowRight size={20} />
                                         </div>
                                     )}

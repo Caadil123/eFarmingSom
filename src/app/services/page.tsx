@@ -7,19 +7,27 @@ import WhyChooseUs from "@/components/home/WhyChooseUs";
 import NewsTestimonials from "@/components/home/NewsTestimonials";
 import PartnersSection from "@/components/common/PartnersSection";
 import ServiceOverview from "./ServiceOverview";
+import PlatformFeatures from "@/components/services/PlatformFeatures";
+import IntegratedFuture from "@/components/services/IntegratedFuture";
 
 export default function ServicesPage() {
     return (
         <main className="min-h-screen bg-white font-sans text-gray-900">
             <TopBar />
             <Navbar />
-            <PageHero title="Services" backgroundImage="/assets/our soultion image (1).png" />
+            <PageHero title="Services" backgroundImage="/assets/servicehero.jpeg" />
 
             {/* Service Overview */}
             <ServiceOverview />
 
             {/* Core Specialization Section */}
-            <CoreSpecialization showAll={true} />
+            <CoreSpecialization showAll={true} isServicePage={true} />
+
+            {/* Platform Features Section */}
+            <PlatformFeatures />
+
+            {/* Integrated Future Section */}
+            <IntegratedFuture />
 
             {/* Why Choose Us Section */}
             <WhyChooseUs />

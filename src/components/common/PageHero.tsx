@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
 import { ChevronRight } from "lucide-react";
@@ -5,20 +7,29 @@ import { ChevronRight } from "lucide-react";
 interface PageHeroProps {
     title: string;
     backgroundImage?: string;
+    className?: string;
 }
 
-const PageHero = ({ title, backgroundImage = "/assets/Hero Image.jpeg" }: PageHeroProps) => {
+const PageHero = ({ title, backgroundImage = "/assets/Hero Image.jpeg", className = "" }: PageHeroProps) => {
     return (
-        <section className="relative w-full h-[300px] md:h-[400px] flex items-center justify-center bg-gray-900 overflow-hidden">
-            {/* Background Image */}
+        <section className={`relative w-full min-h-[70vh] flex items-center justify-center bg-gray-900 overflow-hidden ${className}`}>
+            {/* Background Image with forced aspect ratio */}
             <div className="absolute inset-0 z-0">
-                <Image
-                    src={backgroundImage}
-                    alt={title}
-                    fill
-                    className="object-cover opacity-50"
-                    priority
-                />
+                <div className="relative w-full h-full">
+                    <Image
+                        src={backgroundImage}
+                        alt={title}
+                        fill
+                        className="object-cover opacity-60"
+                        priority
+                        sizes="100vw"
+                        style={{
+                            objectFit: 'cover',
+                            width: '100%',
+                            height: '100%'
+                        }}
+                    />
+                </div>
                 <div className="absolute inset-0 bg-black/50" />
             </div>
 

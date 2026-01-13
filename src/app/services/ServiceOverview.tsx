@@ -27,7 +27,7 @@ const ServiceOverview = () => {
 
                         <div className="relative z-10 rounded-3xl overflow-hidden shadow-2xl">
                             <Image
-                                src="/assets/AboutSection image.jpg"
+                                src="/assets/serviceoverview.png"
                                 alt="Farmers using tablet"
                                 width={800}
                                 height={600}

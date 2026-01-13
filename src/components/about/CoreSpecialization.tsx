@@ -8,7 +8,13 @@ import {
     CreditCard
 } from "lucide-react";
 
-const CoreSpecialization = ({ showAll = false }: { showAll?: boolean }) => {
+const CoreSpecialization = ({
+    showAll = false,
+    isServicePage = false
+}: {
+    showAll?: boolean;
+    isServicePage?: boolean;
+}) => {
     const specializations = [
         {
             title: "Agricultural Inputs & Farm Supplies",
@@ -54,8 +60,17 @@ const CoreSpecialization = ({ showAll = false }: { showAll?: boolean }) => {
         <section className="py-20 bg-gray-50">
             <div className="container mx-auto px-4 md:px-6">
                 <div className="text-center mb-16 space-y-4">
-                    <h2 className="text-4xl font-bold text-gray-900">Core Specialization</h2>
-                    <div className="w-24 h-1 bg-[#006737] mx-auto rounded-full"></div>
+                    {isServicePage ? (
+                        <>
+                            <h4 className="text-primary font-bold uppercase tracking-wider text-sm">What We Offer</h4>
+                            <h2 className="text-4xl md:text-5xl font-bold text-gray-900">Services We’re offering</h2>
+                        </>
+                    ) : (
+                        <>
+                            <h2 className="text-4xl font-bold text-gray-900">Core Specialization</h2>
+                            <div className="w-24 h-1 bg-[#006737] mx-auto rounded-full"></div>
+                        </>
+                    )}
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 gap-y-12">
