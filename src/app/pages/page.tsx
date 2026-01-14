@@ -36,7 +36,7 @@ const NewsAndInsightsPage = () => {
         <main className="min-h-screen bg-white font-sans text-gray-900">
             <TopBar />
             <Navbar />
-            <PageHero title="News & Insights" />
+            <PageHero title="News & Insights" backgroundImage="/assets/newsHeros img.jpeg" />
 
             <section className="py-20 bg-gray-50">
                 <div className="container mx-auto px-4 md:px-6">

@@ -24,7 +24,7 @@ const AboutSection = () => {
                             <div className="inline-block px-4 py-1 text-primary font-semibold text-base tracking-widest mb-2">
                                 WHO WE ARE
                             </div>
-                            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
+                            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 leading-tight">
                                 Driving Smart Agriculture <br /> Across Somalia.
                             </h2>
                             <p className="text-gray-600 text-lg leading-relaxed">
@@ -73,57 +73,12 @@ const AboutSection = () => {
                             </div>
                         </div>
                     </div>
-
-                    {/* Feature Info Cards */}
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-24">
-                        {/* Card 1 */}
-                        <div className="relative bg-white p-10 rounded-3xl shadow-xl hover:shadow-2xl transition-shadow flex flex-col items-center text-center pb-12 group">
-                            <div className="w-20 h-20 bg-primary rounded-full flex items-center justify-center mb-6">
-                                <Sprout className="text-white" size={40} />
-                            </div>
-                            <h3 className="text-xl font-bold text-primary mb-4">Agri-Inputs & Market Linkages</h3>
-                            <p className="text-gray-500 text-sm leading-relaxed mb-6">
-                                Providing farmers with certified seeds, fertilizers, and direct access to reliable markets for better prices and profits.
-                            </p>
-                            <div className="absolute -bottom-6 w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center cursor-pointer hover:bg-gray-50 transition-colors">
-                                <ArrowRight className="text-gray-400" size={20} />
-                            </div>
-                        </div>
-
-                        {/* Card 2 - Active/Highlighted */}
-                        <div className="relative bg-gradient-to-b from-[#1a8f5a] to-[#006737] p-10 rounded-3xl shadow-xl hover:shadow-2xl transition-shadow flex flex-col items-center text-center pb-12 transform md:-translate-y-4">
-                            <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center mb-6">
-                                <Tractor className="text-primary" size={40} />
-                            </div>
-                            <h3 className="text-xl font-bold text-white mb-4">Agri-Advisory & Training</h3>
-                            <p className="text-white/90 text-sm leading-relaxed mb-6">
-                                Delivering expert guidance, digital tools, and workshops that strengthen farmer knowledge and productivity.
-                            </p>
-                            <div className="absolute -bottom-6 w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center cursor-pointer hover:bg-gray-50 transition-colors">
-                                <ArrowRight className="text-gray-600" size={20} />
-                            </div>
-                        </div>
-
-                        {/* Card 3 */}
-                        <div className="relative bg-white p-10 rounded-3xl shadow-xl hover:shadow-2xl transition-shadow flex flex-col items-center text-center pb-12 group">
-                            <div className="w-20 h-20 bg-primary rounded-full flex items-center justify-center mb-6">
-                                <Leaf className="text-white" size={40} />
-                            </div>
-                            <h3 className="text-xl font-bold text-primary mb-4">Agri-Fintech Solutions</h3>
-                            <p className="text-gray-500 text-sm leading-relaxed mb-6">
-                                Offering digital credit scoring, crop insurance, and mobile-based financial tools to empower smallholder farmers.
-                            </p>
-                            <div className="absolute -bottom-6 w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center cursor-pointer hover:bg-gray-50 transition-colors">
-                                <ArrowRight className="text-gray-400" size={20} />
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </section>
 
             {/* Sustainability / Green Section - Updated with container for margins */}
             {/* Sustainability / Green Section - Boxed with margins */}
-            <section className="pb-24 pt-4 bg-white">
+            <section className="mt-24 pb-24 pt-4 bg-white">
                 <div className="container mx-auto px-4 md:px-6">
                     <div className="relative rounded-3xl overflow-hidden h-[500px] flex items-center justify-center">
                         {/* Background Image & Overlay */}
@@ -150,7 +105,7 @@ const AboutSection = () => {
                                 more sustainable Somalia.
                             </p>
                             <Link
-                                href="/sustainability"
+                                href="/projects"
                                 className="inline-block px-10 py-4 bg-[#004d29] text-white font-semibold rounded-full text-sm hover:bg-white hover:text-[#006737] transition-all border border-green-800 hover:border-white shadow-xl transform hover:scale-105"
                             >
                                 DISCOVER MORE

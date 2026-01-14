@@ -4,7 +4,7 @@ import { Phone, MapPin, Mail, Send } from "lucide-react";
 
 const ContactSection = () => {
     return (
-        <section className="relative py-20 bg-[#F3F5F7] overflow-hidden">
+        <section className="relative py-20 bg-[#F3F5F7] overflow-hidden mb-16">
 
             <div className="container mx-auto px-4 md:px-6 relative z-10">
                 <div className="flex flex-col lg:flex-row gap-16 items-start">
@@ -62,8 +62,8 @@ const ContactSection = () => {
                             <h2 className="text-4xl font-extrabold text-gray-900">
                                 Contact <span className="relative inline-block">
                                     Information
-                                    <svg className="absolute w-full h-3 -bottom-1 left-0 text-[#00703C]" viewBox="0 0 100 10" preserveAspectRatio="none">
-                                        <path d="M0 5 Q 50 10 100 5" stroke="currentColor" strokeWidth="4" fill="none" />
+                                    <svg className="absolute w-full h-4 -bottom-2 left-0 text-[#00703C]" viewBox="0 0 100 10" preserveAspectRatio="none">
+                                        <path d="M0 5 Q 50 10 100 5" stroke="currentColor" strokeWidth="6" fill="none" strokeLinecap="round" />
                                     </svg>
                                 </span>
                             </h2>
@@ -113,6 +113,17 @@ const ContactSection = () => {
                         </div>
                     </div>
                 </div>
+            </div>
+
+            {/* Wheat Image Decoration */}
+            <div className="absolute bottom-24 right-0 w-[380px] h-[380px] pointer-events-none z-0 opacity-90">
+                <Image
+                    src="/assets/contact-wheat.png"
+                    alt="Wheat decoration"
+                    width={380}
+                    height={380}
+                    className="object-contain"
+                />
             </div>
         </section>
     );

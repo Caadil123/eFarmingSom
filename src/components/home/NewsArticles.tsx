@@ -1,46 +1,22 @@
 import Image from "next/image";
 import Link from "next/link";
 import PartnersSection from "../common/PartnersSection";
+import { newsArticles } from "@/data/news";
 
 const NewsArticles = () => {
-    const articles = [
-        {
-            id: 1,
-            image: "/assets/news img (2).png",
-            title: "Smart Farming Solutions Workshop",
-            date: "October 10, 2025",
-            comments: "No Comments",
-            excerpt: "Join experts and farmers to explore cutting-edge IoT tools and automated systems designed to boost productivity while conserving vital resources."
-        },
-        {
-            id: 2,
-            image: "/assets/news img (1).png",
-            title: "Building Climate-Smart Agriculture for the Future",
-            date: "September 22, 2025",
-            comments: "No Comments",
-            excerpt: "Discover strategies for adapting to changing climates, focusing on sustainable practices that ensure long-term food security and environmental health."
-        },
-        {
-            id: 3,
-            image: "/assets/news img (3).png",
-            title: "Digital Advisory Platforms Transform Rural Farming",
-            date: "August 30, 2025",
-            comments: "No Comments",
-            excerpt: "Learn how mobile technology is bridging the gap by providing real-time weather data, pest advice, and direct market access to remote communities."
-        }
-    ];
-
     return (
         <section className="py-20 bg-gray-50">
             <div className="container mx-auto px-4 md:px-6">
                 <div className="text-center mb-16 space-y-4">
-                    <h2 className="text-4xl font-bold text-gray-900">Latest News & Article</h2>
-                    <div className="w-16 h-1 bg-primary mx-auto rounded-full"></div>
+                    <Link href="/news-insights" className="group block">
+                        <h2 className="text-4xl font-bold text-gray-900 group-hover:text-primary transition-colors">Latest News & Article</h2>
+                        <div className="w-16 h-1 bg-primary mx-auto rounded-full mt-4 group-hover:w-24 transition-all duration-300"></div>
+                    </Link>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
-                    {articles.map((article) => (
-                        <div key={article.id} className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 group">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+                    {newsArticles.map((article) => (
+                        <Link href="/news-insights" key={article.id} className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 group">
                             <div className="relative h-64 overflow-hidden">
                                 <Image
                                     src={article.image}
@@ -58,15 +34,24 @@ const NewsArticles = () => {
                                     <span>•</span>
                                     <span>{article.comments}</span>
                                 </div>
-                                <p className="text-gray-600 text-sm leading-relaxed mb-4">
+                                <p className="text-gray-600 text-sm leading-relaxed">
                                     {article.excerpt}
                                 </p>
                             </div>
-                        </div>
+                        </Link>
                     ))}
                 </div>
 
-                {/* Partners Section */}
+                <div className="flex justify-center mb-20">
+                    <Link
+                        href="/pages"
+                        className="bg-primary text-white px-8 py-3 rounded-full font-bold hover:bg-emerald-700 transition-colors shadow-lg hover:shadow-xl transform hover:-translate-y-1 inline-flex items-center gap-2"
+                    >
+                        View All Insights
+                        <span className="text-xl">→</span>
+                    </Link>
+                </div>
+
                 {/* Partners Section */}
                 <PartnersSection />
             </div>

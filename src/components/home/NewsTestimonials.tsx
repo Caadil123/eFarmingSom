@@ -104,7 +104,7 @@ const NewsTestimonials = () => {
     }, [totalSlides]);
 
     // Handle manual slide change
-    const goToSlide = (slideIndex) => {
+    const goToSlide = (slideIndex: number) => {
         setCurrentSlide(slideIndex);
     };
 

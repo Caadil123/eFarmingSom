@@ -11,7 +11,7 @@ const Hero = () => {
                 {/* Background Image */}
                 <div className="absolute inset-0 z-0 overflow-hidden">
                     <Image
-                        src="/assets/Hero image.jpeg"
+                        src="/assets/HomeHero img.jpeg"
                         alt="Green Agriculture Field"
                         fill
                         className="object-cover opacity-60"
@@ -39,7 +39,7 @@ const Hero = () => {
                             ABOUT US
                         </Link>
                         <Link
-                            href="/work"
+                            href="/services"
                             className="px-8 py-3 bg-white hover:bg-gray-100 text-[#006737] font-semibold rounded-full text-sm tracking-wide transition-all"
                         >
                             OUR WORK

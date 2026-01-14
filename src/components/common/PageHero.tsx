@@ -12,7 +12,7 @@ interface PageHeroProps {
 
 const PageHero = ({ title, backgroundImage = "/assets/Hero Image.jpeg", className = "" }: PageHeroProps) => {
     return (
-        <section className={`relative w-full min-h-[70vh] flex items-center justify-center bg-gray-900 overflow-hidden ${className}`}>
+        <section className={`relative w-full min-h-[70vh] flex items-center justify-center bg-gray-00 overflow-hidden ${className}`}>
             {/* Background Image with forced aspect ratio */}
             <div className="absolute inset-0 z-0">
                 <div className="relative w-full h-full">
@@ -20,7 +20,7 @@ const PageHero = ({ title, backgroundImage = "/assets/Hero Image.jpeg", classNam
                         src={backgroundImage}
                         alt={title}
                         fill
-                        className="object-cover opacity-60"
+                        className="object-cover opacity-80"
                         priority
                         sizes="100vw"
                         style={{
@@ -30,7 +30,7 @@ const PageHero = ({ title, backgroundImage = "/assets/Hero Image.jpeg", classNam
                         }}
                     />
                 </div>
-                <div className="absolute inset-0 bg-black/50" />
+                <div className="absolute inset-0 bg-black/70" />
             </div>
 
             {/* Content */}

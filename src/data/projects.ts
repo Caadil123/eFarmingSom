@@ -73,7 +73,7 @@ export const PROJECTS_DATA: Project[] = [
         category: 'Innovation',
         location: 'Selected Farming Communities',
         description: 'A farmer-focused financial inclusion project providing access to microloans, input financing, and weather-indexed insurance through trusted partners using farm performance data.',
-        image: '/assets/news img (2).png',
+        image: '/assets/project 5.jpeg',
         focusAreas: ['Agricultural finance', 'Microinsurance', 'Risk management']
     },
     {
