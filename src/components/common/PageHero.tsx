@@ -20,7 +20,7 @@ const PageHero = ({ title, backgroundImage = "/assets/Hero Image.jpeg", classNam
                         src={backgroundImage}
                         alt={title}
                         fill
-                        className="object-cover opacity-80"
+                        className="object-cover"
                         priority
                         sizes="100vw"
                         style={{
@@ -30,7 +30,7 @@ const PageHero = ({ title, backgroundImage = "/assets/Hero Image.jpeg", classNam
                         }}
                     />
                 </div>
-                <div className="absolute inset-0 bg-black/70" />
+                <div className="absolute inset-0 bg-black/40" />
             </div>
 
             {/* Content */}

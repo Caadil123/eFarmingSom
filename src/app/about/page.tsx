@@ -16,13 +16,13 @@ export default function AboutPage() {
         <main className="min-h-screen bg-white font-sans text-gray-900">
             <TopBar />
             <Navbar />
-            <PageHero title="About Us" />
+            <PageHero title="About Us" backgroundImage="/assets/AboutHero section.png" />
             <AboutOverview />
             <MissionVision />
             <CoreSpecialization />
             <PerfectChain />
             <StatsSection />
-            <TeamPreview />
+            {/* <TeamPreview /> */}
             <WhyChooseUs />
             <Footer />
         </main>

@@ -13,7 +13,7 @@ export default function ContactPage() {
             <Navbar />
             <PageHero
                 title="Contact Us"
-                backgroundImage="/assets/Hero Image.jpeg" // Using default or specific contact hero if available
+                backgroundImage="/assets/contactHero img.jpeg" // Using default or specific contact hero if available
             />
 
             <div className="py-20">

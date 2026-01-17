@@ -17,7 +17,7 @@ const NewsInsightsPage = () => {
             <Navbar />
             <PageHero
                 title="News & Insights"
-                backgroundImage="/assets/newsHero img.jpeg"
+                backgroundImage="/assets/newsHero .jpeg"
             />
 
             <section className="py-20 md:py-32">

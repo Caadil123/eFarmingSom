@@ -37,6 +37,10 @@ const NewsAndInsightsPage = () => {
             <TopBar />
             <Navbar />
             <PageHero title="News & Insights" backgroundImage="/assets/newsHeros img.jpeg" />
+            <div className="text-center mb-16 space-y-4 pt-8">
+                <h2 className="text-4xl font-bold text-gray-900 group-hover:text-primary transition-colors">Latest News & Article</h2>
+                <div className="w-16 h-1 bg-primary mx-auto rounded-full mt-4 group-hover:w-24 transition-all duration-300"></div>
+            </div>
 
             <section className="py-20 bg-gray-50">
                 <div className="container mx-auto px-4 md:px-6">

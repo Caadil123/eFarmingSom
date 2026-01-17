@@ -14,10 +14,10 @@ const Hero = () => {
                         src="/assets/HomeHero img.jpeg"
                         alt="Green Agriculture Field"
                         fill
-                        className="object-cover opacity-60"
+                        className="object-cover opacity-90"
                         priority
                     />
-                    <div className="absolute inset-0 bg-black/40" />
+                    <div className="absolute inset-0 bg-black/30" />
                 </div>
 
                 {/* Content */}

@@ -11,7 +11,7 @@ const ServiceOverview = () => {
                         <div className="inline-block px-4 py-1 text-primary font-semibold text-base tracking-widest mb-2 bg-green-50 rounded-full">
                             OUR SERVICES
                         </div>
-                        <h2 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
+                        <h2 className="text-3xl md:text-3xl font-bold text-gray-900 leading-tight">
                             Empowering Farmers with <br /> Innovative Agricultural Solutions
                         </h2>
                         <p className="text-gray-600 text-lg leading-relaxed">

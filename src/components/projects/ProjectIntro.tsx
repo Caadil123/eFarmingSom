@@ -10,7 +10,7 @@ const ProjectIntro = () => {
                         <h4 className="text-emerald-600 font-bold uppercase tracking-widest text-sm">
                             Our Project
                         </h4>
-                        <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
+                        <h2 className="text-3xl md:text-4xl lg:text-6xl font-bold text-gray-900 leading-tight">
                             Driving Climate-Smart Agriculture Across Somalia
                         </h2>
                     </div>

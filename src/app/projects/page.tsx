@@ -21,7 +21,7 @@ export default function ProjectsPage() {
             {/* Hero Section */}
             <PageHero
                 title="Our Projects"
-                backgroundImage="/assets/servicehero.jpeg" // Using existing asset as placeholder
+                backgroundImage="/assets/projectHero img.jpeg" // Using existing asset as placeholder
             />
 
             {/* Project Intro Section */}

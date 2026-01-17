@@ -1,8 +1,56 @@
 
+"use client";
+
 import Image from "next/image";
 import { Phone, MapPin, Mail, Send } from "lucide-react";
+import { useState } from "react";
 
 const ContactSection = () => {
+    const [formData, setFormData] = useState({
+        name: "",
+        email: "",
+        phone: "",
+        message: ""
+    });
+    const [showSuccess, setShowSuccess] = useState(false);
+
+    const handleSubmit = (e: React.FormEvent) => {
+        e.preventDefault();
+
+        const { name, email, phone, message } = formData;
+        const companyEmail = "efarmingsomalia@gmail.com";
+        const subject = encodeURIComponent(`New message from ${name}`);
+        const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\nPhone: ${phone}\n\nMessage:\n${message}`);
+
+        // This opens a direct Gmail compose window which is more reliable in browsers
+        const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${companyEmail}&su=${subject}&body=${body}`;
+
+        // Open in a new tab
+        window.open(gmailUrl, '_blank');
+
+        // Clear the form and show success message
+        setFormData({
+            name: "",
+            email: "",
+            phone: "",
+            message: ""
+        });
+        setShowSuccess(true);
+
+        // Hide success message after 5 seconds
+        setTimeout(() => {
+            setShowSuccess(false);
+        }, 5000);
+    };
+
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+        const { name, value } = e.target;
+        setFormData(prev => ({
+            ...prev,
+            [name]: value
+        }));
+    };
+
     return (
         <section className="relative py-20 bg-[#F3F5F7] overflow-hidden mb-16">
 
@@ -17,36 +65,60 @@ const ContactSection = () => {
                                 <h2 className="text-4xl font-extrabold text-gray-900 mt-2">Send us a Message</h2>
                             </div>
 
-                            <form className="space-y-6">
+                            {showSuccess && (
+                                <div className="mb-6 p-4 bg-emerald-50 border border-emerald-200 text-emerald-800 rounded-xl flex items-center gap-3 animate-in fade-in slide-in-from-top-4 duration-300">
+                                    <div className="w-8 h-8 rounded-full bg-emerald-500 flex items-center justify-center text-white shrink-0">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                    </div>
+                                    <p className="font-medium text-sm">Thank you! Your message has been sent. We will respond to you immediately.</p>
+                                </div>
+                            )}
+
+                            <form onSubmit={handleSubmit} className="space-y-6">
                                 <div>
                                     <input
                                         type="text"
+                                        name="name"
                                         placeholder="Name"
+                                        value={formData.name}
+                                        onChange={handleChange}
+                                        required
                                         className="w-full bg-gray-50 border border-transparent focus:border-secondary focus:bg-white focus:ring-0 text-gray-900 rounded-lg px-6 py-4 outline-none transition-all placeholder:text-gray-400"
                                     />
                                 </div>
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                     <input
                                         type="email"
+                                        name="email"
                                         placeholder="Email*"
+                                        value={formData.email}
+                                        onChange={handleChange}
+                                        required
                                         className="w-full bg-gray-50 border border-transparent focus:border-secondary focus:bg-white focus:ring-0 text-gray-900 rounded-lg px-6 py-4 outline-none transition-all placeholder:text-gray-400"
                                     />
                                     <input
                                         type="tel"
+                                        name="phone"
                                         placeholder="Phone"
+                                        value={formData.phone}
+                                        onChange={handleChange}
                                         className="w-full bg-gray-50 border border-transparent focus:border-secondary focus:bg-white focus:ring-0 text-gray-900 rounded-lg px-6 py-4 outline-none transition-all placeholder:text-gray-400"
                                     />
                                 </div>
                                 <div>
                                     <textarea
+                                        name="message"
                                         placeholder="Tell Us About Project *"
                                         rows={6}
+                                        value={formData.message}
+                                        onChange={handleChange}
+                                        required
                                         className="w-full bg-gray-50 border border-transparent focus:border-secondary focus:bg-white focus:ring-0 text-gray-900 rounded-lg px-6 py-4 outline-none transition-all resize-none placeholder:text-gray-400"
                                     ></textarea>
                                 </div>
 
                                 <button
-                                    type="button"
+                                    type="submit"
                                     className="bg-[#00703C] hover:bg-[#005a30] text-white font-bold py-4 px-8 rounded-lg inline-flex items-center gap-2 transition-colors shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 duration-200"
                                 >
                                     <Send size={18} />
@@ -83,7 +155,7 @@ const ContactSection = () => {
                                 </div>
                                 <div>
                                     <h4 className="font-bold text-gray-900 text-lg mb-1">Phone</h4>
-                                    <p className="text-gray-600 font-medium">+252 612 767 693</p>
+                                    <a href="tel:+252613233586" className="text-gray-600 font-medium hover:text-[#00703C] transition-colors">+252 613 233 586</a>
                                 </div>
                             </div>
 
@@ -107,7 +179,7 @@ const ContactSection = () => {
                                 </div>
                                 <div>
                                     <h4 className="font-bold text-gray-900 text-lg mb-1">Official Email</h4>
-                                    <p className="text-gray-600 font-medium">info@ebeersom.com</p>
+                                    <a href="mailto:efarmingsomalia@gmail.com" className="text-gray-600 font-medium hover:text-[#00703C] transition-colors">efarmingsomalia@gmail.com</a>
                                 </div>
                             </div>
                         </div>

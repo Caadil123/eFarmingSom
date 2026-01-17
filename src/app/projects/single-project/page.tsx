@@ -33,7 +33,7 @@ export default function SingleProjectPage() {
                         className="object-cover"
                         priority
                     />
-                    <div className="absolute inset-0 bg-black/60"></div>
+                    <div className="absolute inset-0 bg-black/30"></div>
                 </div>
 
                 <div className="container mx-auto px-4 md:px-6 relative z-10">
