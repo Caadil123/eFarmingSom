@@ -3,35 +3,10 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import PageHero from "@/components/common/PageHero";
 import Image from "next/image";
+import Link from "next/link";
+import { newsArticles } from "@/data/news";
 
 const NewsAndInsightsPage = () => {
-    const articles = [
-        {
-            id: 1,
-            image: "/assets/news img (2).png",
-            title: "Smart Farming Solutions Workshop",
-            date: "October 10, 2025",
-            comments: "No Comments",
-            excerpt: "Join experts and farmers to explore cutting-edge IoT tools and automated systems designed to boost productivity while conserving vital resources."
-        },
-        {
-            id: 2,
-            image: "/assets/news img (1).png",
-            title: "Building Climate-Smart Agriculture for the Future",
-            date: "September 22, 2025",
-            comments: "No Comments",
-            excerpt: "Discover strategies for adapting to changing climates, focusing on sustainable practices that ensure long-term food security and environmental health."
-        },
-        {
-            id: 3,
-            image: "/assets/news img (3).png",
-            title: "Digital Advisory Platforms Transform Rural Farming",
-            date: "August 30, 2025",
-            comments: "No Comments",
-            excerpt: "Learn how mobile technology is bridging the gap by providing real-time weather data, pest advice, and direct market access to remote communities."
-        }
-    ];
-
     return (
         <main className="min-h-screen bg-white font-sans text-gray-900">
             <TopBar />
@@ -45,7 +20,7 @@ const NewsAndInsightsPage = () => {
             <section className="py-20 bg-gray-50">
                 <div className="container mx-auto px-4 md:px-6">
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                        {articles.map((article) => (
+                        {newsArticles.map((article) => (
                             <div key={article.id} className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 group">
                                 <div className="relative h-64 overflow-hidden">
                                     <Image
@@ -64,9 +39,16 @@ const NewsAndInsightsPage = () => {
                                         <span>•</span>
                                         <span>{article.comments}</span>
                                     </div>
-                                    <p className="text-gray-600 text-sm leading-relaxed mb-4">
+                                    <p className="text-gray-600 text-sm leading-relaxed mb-6">
                                         {article.excerpt}
                                     </p>
+                                    <Link
+                                        href={`/pages/${article.id}`}
+                                        className="mt-auto inline-flex items-center text-primary font-bold hover:text-emerald-700 transition-colors gap-1 group/btn"
+                                    >
+                                        Learn more
+                                        <span className="group-hover/btn:translate-x-1 transition-transform">→</span>
+                                    </Link>
                                 </div>
                             </div>
                         ))}

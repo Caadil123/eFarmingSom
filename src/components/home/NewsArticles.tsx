@@ -10,13 +10,14 @@ const NewsArticles = () => {
                 <div className="text-center mb-16 space-y-4">
                     <Link href="/pages" className="group block">
                         <h2 className="text-4xl font-bold text-gray-900 group-hover:text-primary transition-colors">Latest News & Article</h2>
+                        <p className="text-gray-600 text-sm">Discover how Somali farmers are using eFarming’s smart agriculture and IoT solutions to transform farming, increase yields, and grow profits</p>
                         <div className="w-16 h-1 bg-primary mx-auto rounded-full mt-4 group-hover:w-24 transition-all duration-300"></div>
                     </Link>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-                    {newsArticles.map((article) => (
-                        <Link href="/pages" key={article.id} className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 group">
+                    {newsArticles.slice(0, 3).map((article) => (
+                        <div key={article.id} className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 group">
                             <div className="relative h-64 overflow-hidden">
                                 <Image
                                     src={article.image}
@@ -34,11 +35,18 @@ const NewsArticles = () => {
                                     <span>•</span>
                                     <span>{article.comments}</span>
                                 </div>
-                                <p className="text-gray-600 text-sm leading-relaxed">
+                                <p className="text-gray-600 text-sm leading-relaxed mb-4">
                                     {article.excerpt}
                                 </p>
+                                <Link
+                                    href={`/pages/${article.id}`}
+                                    className="inline-flex items-center text-primary font-bold hover:text-emerald-700 transition-colors gap-1 group/btn"
+                                >
+                                    Learn more
+                                    <span className="group-hover/btn:translate-x-1 transition-transform">→</span>
+                                </Link>
                             </div>
-                        </Link>
+                        </div>
                     ))}
                 </div>
 

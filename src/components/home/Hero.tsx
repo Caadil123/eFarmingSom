@@ -17,16 +17,16 @@ const Hero = () => {
                         className="object-cover opacity-90"
                         priority
                     />
-                    <div className="absolute inset-0 bg-black/30" />
+                    <div className="absolute inset-0 bg-black/60" />
                 </div>
 
                 {/* Content */}
                 <div className="container relative z-10 mx-auto px-4 md:px-6 flex flex-col items-center justify-center text-center h-full pb-32">
-                    <h1 className="text-4xl md:text-4xl lg:text-5xl text-white mb-6 max-w-5xl animate-fade-in">
+                    <h1 className="text-4xl md:text-4xl lg:text-5xl text-white font-bold mb-6 max-w-5xl animate-fade-in drop-shadow-2xl">
                         Innovating Somali <br /> Agricultural Growth Solutions
                     </h1>
 
-                    <p className="text-gray-200 text-lg md:text-xl max-w-2xl mb-10 leading-relaxed animate-fade-in delay-100">
+                    <p className="text-white text-lg md:text-xl max-w-2xl mb-10 leading-relaxed animate-fade-in delay-100 drop-shadow-lg font-medium">
                         Connecting farmers, markets, and innovation through digital tools, quality inputs, and
                         real-time support for sustainable growth.
                     </p>

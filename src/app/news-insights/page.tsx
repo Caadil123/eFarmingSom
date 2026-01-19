@@ -3,6 +3,7 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import PageHero from "@/components/common/PageHero";
 import Image from "next/image";
+import Link from "next/link";
 import { newsArticles } from "@/data/news";
 
 export const metadata = {
@@ -53,9 +54,17 @@ const NewsInsightsPage = () => {
                                         </span>
                                     </div>
 
-                                    <p className="text-gray-600 text-base leading-relaxed line-clamp-3">
+                                    <p className="text-gray-600 text-base leading-relaxed line-clamp-3 mb-6">
                                         {article.excerpt}
                                     </p>
+
+                                    <Link
+                                        href={`/news-insights/${article.id}`}
+                                        className="mt-auto inline-flex items-center text-primary font-bold hover:text-emerald-700 transition-colors gap-1 group/btn"
+                                    >
+                                        Learn more
+                                        <span className="group-hover/btn:translate-x-1 transition-transform">→</span>
+                                    </Link>
                                 </div>
                             </div>
                         ))}
