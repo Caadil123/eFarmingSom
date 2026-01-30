@@ -11,6 +11,8 @@ import CoreSpecialization from "@/components/about/CoreSpecialization";
 import PerfectChain from "@/components/about/PerfectChain";
 import TeamPreview from "@/components/about/TeamPreview";
 
+import PartnersSection from "@/components/common/PartnersSection";
+
 export default function AboutPage() {
     return (
         <main className="min-h-screen bg-white font-sans text-gray-900">
@@ -22,7 +24,8 @@ export default function AboutPage() {
             <CoreSpecialization />
             <PerfectChain />
             <StatsSection />
-            {/* <TeamPreview /> */}
+            <TeamPreview />
+            <PartnersSection />
             <WhyChooseUs />
             <Footer />
         </main>

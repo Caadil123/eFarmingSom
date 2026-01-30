@@ -1,25 +1,83 @@
+"use client";
+
 import TopBar from "@/components/layout/TopBar";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import PageHero from "@/components/common/PageHero";
 import Image from "next/image";
 import Link from "next/link";
-import { newsArticles } from "@/data/news";
-import { notFound } from "next/navigation";
-import { Calendar, User, MessageCircle, ArrowLeft, Clock, Tag, Target, MapPin, Users, Building2 } from "lucide-react";
+import { NewsArticle, newsArticles } from "@/data/news";
+import { notFound, useParams } from "next/navigation";
+import { Calendar, MessageCircle, ArrowLeft, Clock, Tag, Target, MapPin, Users, Building2 } from "lucide-react";
+import React, { useState, useEffect } from 'react';
+import { fetchPost } from "@/lib/api-client";
 
-interface Props {
-    params: Promise<{
-        id: string;
-    }>;
-}
+const NewsDetailPage = () => {
+    const params = useParams();
+    const id = params?.id as string;
 
-const NewsDetailPage = async ({ params }: Props) => {
-    const { id } = await params;
-    const article = newsArticles.find((a) => a.id === parseInt(id));
+    const [article, setArticle] = useState<NewsArticle | null>(null);
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        async function loadArticle() {
+            if (!id) return;
+
+            // 1. Try finding it in static data first (fastest)
+            const staticMatch = newsArticles.find((a) => String(a.id) === id);
+
+            if (staticMatch) {
+                setArticle(staticMatch);
+                setLoading(false);
+                return;
+            }
+
+            // 2. If not found, try fetching from API
+            try {
+                const liveMatch = await fetchPost(id);
+                if (liveMatch) {
+                    setArticle(liveMatch);
+                } else {
+                    // console.warn("Article not found in static or live data");
+                }
+            } catch (error) {
+                console.error("Error loading article:", error);
+            } finally {
+                setLoading(false);
+            }
+        }
+
+        loadArticle();
+    }, [id]);
+
+    if (loading) {
+        return (
+            <div className="min-h-screen bg-white flex flex-col">
+                <TopBar />
+                <Navbar />
+                <div className="flex-grow flex justify-center items-center">
+                    <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-emerald-600"></div>
+                </div>
+            </div>
+        );
+    }
 
     if (!article) {
-        notFound();
+        // Optionally render custom 404 here, or just return null to trigger default handling
+        return (
+            <div className="min-h-screen bg-white flex flex-col">
+                <TopBar />
+                <Navbar />
+                <div className="flex-grow flex flex-col justify-center items-center text-center p-8">
+                    <h2 className="text-3xl font-bold text-gray-900 mb-4">Article Not Found</h2>
+                    <p className="text-gray-600 mb-8">The article you are looking for does not exist or has been removed.</p>
+                    <Link href="/news-insights" className="text-emerald-600 font-bold hover:underline">
+                        Back to News
+                    </Link>
+                </div>
+                <Footer />
+            </div>
+        );
     }
 
     return (
@@ -86,16 +144,7 @@ const NewsDetailPage = async ({ params }: Props) => {
                             </div>
                         )}
 
-                        {/* Article Image - Featured Image */}
-                        <div className="relative h-[300px] md:h-[550px] rounded-[2rem] overflow-hidden mb-16 shadow-2xl ring-1 ring-gray-200">
-                            <Image
-                                src={article.image}
-                                alt={article.title}
-                                fill
-                                className="object-cover"
-                                priority
-                            />
-                        </div>
+
 
                         {/* Article Content */}
                         <article className="max-w-none">
