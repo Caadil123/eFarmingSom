@@ -48,6 +48,7 @@ import { NewsArticle } from '@/data/news';
 
 export async function fetchPosts(): Promise<NewsArticle[]> {
     try {
+        console.log(`Fetching posts from: ${API_BASE_URL}/posts`);
         const response = await fetch(`${API_BASE_URL}/posts`, {
             method: 'GET',
             headers: {
@@ -57,11 +58,12 @@ export async function fetchPosts(): Promise<NewsArticle[]> {
         });
 
         if (!response.ok) {
-            console.error('Failed to fetch posts:', response.statusText);
+            console.error(`Failed to fetch posts: ${response.status} ${response.statusText}`);
             return [];
         }
 
         const adminPosts: AdminPost[] = await response.json();
+        console.log(`Successfully fetched ${adminPosts.length} posts`);
         return adminPosts.map(transformAdminToClientPost);
     } catch (error) {
         console.error('Error fetching posts:', error);
@@ -137,6 +139,7 @@ export async function fetchPost(id: string | number): Promise<NewsArticle | null
 }
 export async function fetchProjects(): Promise<Project[]> {
     try {
+        console.log(`Fetching projects from: ${API_BASE_URL}/projects`);
         const response = await fetch(`${API_BASE_URL}/projects`, {
             method: 'GET',
             headers: {
@@ -148,11 +151,12 @@ export async function fetchProjects(): Promise<Project[]> {
 
         if (!response.ok) {
             // If the server is down or returns an error, we can fallback to empty or handle it
-            console.error('Failed to fetch projects:', response.statusText);
+            console.error(`Failed to fetch projects: ${response.status} ${response.statusText}`);
             return [];
         }
 
         const adminProjects: AdminProject[] = await response.json();
+        console.log(`Successfully fetched ${adminProjects.length} projects`);
 
         // Transform Admin Projects to Client Project Interface
         return adminProjects.map(transformAdminToClientProject);
