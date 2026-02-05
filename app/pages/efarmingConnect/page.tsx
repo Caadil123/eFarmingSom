@@ -46,16 +46,16 @@ export default function EFarmingConnectPage() {
 
                             <div className="flex flex-col sm:flex-row gap-4 pt-4">
                                 <Link
-                                    href="/marketplace"
+                                    href="#"
                                     className="bg-white text-primary px-8 py-4 rounded-xl font-bold flex items-center justify-center gap-2 hover:bg-secondary transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1"
                                 >
                                     Explore Marketplace
                                     <ArrowRight size={20} />
                                 </Link>
-                                <button className="bg-white/20 backdrop-blur-md text-white px-8 py-4 rounded-xl font-bold flex items-center justify-center gap-2 hover:bg-white/30 transition-all border border-white/30 shadow-lg group">
+                                {/* <button className="bg-white/20 backdrop-blur-md text-white px-8 py-4 rounded-xl font-bold flex items-center justify-center gap-2 hover:bg-white/30 transition-all border border-white/30 shadow-lg group">
                                     <Bot size={20} className="group-hover:scale-110 transition-transform" />
                                     Ask AI Assistant
-                                </button>
+                                </button> */}
                             </div>
                         </div>
 
@@ -269,16 +269,16 @@ export default function EFarmingConnectPage() {
                     </p>
                     <div className="flex flex-col sm:flex-row justify-center gap-4">
                         <Link
-                            href="/register"
+                            href="/contact"
                             className="bg-secondary text-primary px-8 py-3.5 rounded-full font-bold flex items-center justify-center gap-2 hover:bg-white transition-colors shadow-lg"
                         >
                             Get Started Today
                             <CheckCircle size={18} />
                         </Link>
-                        <button className="bg-white/20 backdrop-blur-md text-white border border-white/40 px-8 py-3.5 rounded-full font-bold flex items-center justify-center gap-2 hover:bg-white/30 transition-colors shadow-lg">
+                        {/* <button className="bg-white/20 backdrop-blur-md text-white border border-white/40 px-8 py-3.5 rounded-full font-bold flex items-center justify-center gap-2 hover:bg-white/30 transition-colors shadow-lg">
                             <MessageCircle size={18} />
                             Try AI Assistant
-                        </button>
+                        </button> */}
                     </div>
                 </div>
             </section>

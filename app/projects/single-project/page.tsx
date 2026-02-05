@@ -191,10 +191,6 @@ export default function SingleProjectPage() {
                                         </div>
                                     </div>
                                 </div>
-                                <button className="w-full mt-8 bg-primary hover:bg-emerald-800 text-white font-bold py-4 rounded-xl transition-all flex items-center justify-center gap-2 group">
-                                    Download Case Study
-                                    <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
-                                </button>
                             </div>
                         </div>
                     </div>
