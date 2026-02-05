@@ -12,7 +12,7 @@ const AboutOverview = () => {
                             WHO WE ARE
                         </div>
                         <h2 className="text-3xl md:text-4xl font-bold text-gray-900 leading-tight">
-                            Innovating Somali <br /> Agricultural Growth Solutions
+                            Innovating Somalia <br /> Agricultural Growth Solutions
                         </h2>
                         <p className="text-gray-600 text-lg leading-relaxed">
                             eFarming Somalia is a First Leading agritech and agribusiness solutions company driving the transformation of Somalia’s agriculture through technology, innovation, and farmer-first solutions.
@@ -43,7 +43,7 @@ const AboutOverview = () => {
 
                         <div className="relative z-10 rounded-3xl overflow-hidden shadow-2xl">
                             <Image
-                                src="/assets/AboutSection image.jpg"
+                                src="/assets/AboutSection-image.png"
                                 alt="Farmers using tablet"
                                 width={800}
                                 height={600}
