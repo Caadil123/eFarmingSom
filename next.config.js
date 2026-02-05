@@ -7,9 +7,8 @@ const nextConfig = {
         hostname: "images.unsplash.com",
       },
       {
-        protocol: "http",
-        hostname: "localhost",
-        port: "3001",
+        protocol: "https",
+        hostname: "dashboard.efarmingsom.com",
         pathname: "/uploads/**",
       },
     ],
