@@ -11,7 +11,7 @@ const Hero = () => {
                 {/* Background Image */}
                 <div className="absolute inset-0 z-0 overflow-hidden">
                     <Image
-                        src="/assets/HomeHero img.jpeg"
+                        src="/assets/HomeHero-img.jpeg"
                         alt="Green Agriculture Field"
                         fill
                         className="object-cover opacity-90"
