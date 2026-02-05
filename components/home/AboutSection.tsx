@@ -10,7 +10,7 @@ const AboutSection = () => {
                 {/* Background Image Overlay */}
                 <div className="absolute inset-0 z-0 opacity-5">
                     <Image
-                        src="/assets/Section.png"
+                        src="/assets/AboutSection-image.png"
                         alt="Background Pattern"
                         fill
                         className="object-cover"
