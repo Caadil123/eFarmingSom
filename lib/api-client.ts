@@ -2,7 +2,7 @@ import { Project } from '@/data/projects';
 
 // Define the API base URL - using environment variable or default to localhost
 // Note: In Next.js, environment variables prefixed with NEXT_PUBLIC_ are available in the browser
-const API_BASE_URL = process.env.NEXT_PUBLIC_ADMIN_API_URL || 'http://localhost:3000/api';
+const API_BASE_URL = process.env.NEXT_PUBLIC_ADMIN_API_URL || 'https://dashboard.efarmingsom.com/api';
 
 /**
  * Interface representing the Project structure from the Admin API (Prisma model)
