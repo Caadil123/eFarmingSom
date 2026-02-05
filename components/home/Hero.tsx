@@ -23,7 +23,7 @@ const Hero = () => {
                 {/* Content */}
                 <div className="container relative z-10 mx-auto px-4 md:px-6 flex flex-col items-center justify-center text-center h-full pb-32">
                     <h1 className="text-4xl md:text-4xl lg:text-5xl text-white font-bold mb-6 max-w-5xl animate-fade-in drop-shadow-2xl">
-                        Innovating Somali <br /> Agricultural Growth Solutions
+                        Innovating Somalia <br /> Agricultural Growth Solutions
                     </h1>
 
                     <p className="text-white text-lg md:text-xl max-w-2xl mb-10 leading-relaxed animate-fade-in delay-100 drop-shadow-lg font-medium">
