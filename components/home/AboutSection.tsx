@@ -10,7 +10,7 @@ const AboutSection = () => {
                 {/* Background Image Overlay */}
                 <div className="absolute inset-0 z-0 opacity-5">
                     <Image
-                        src="/assets/AboutSection-image.png"
+                        src="/assets/Section.png"
                         alt="Background Pattern"
                         fill
                         className="object-cover"
@@ -58,7 +58,7 @@ const AboutSection = () => {
 
                             <div className="relative z-10 rounded-3xl overflow-hidden shadow-2xl">
                                 <Image
-                                    src="/assets/AboutSection image.jpg"
+                                    src="/assets/AboutSection-image.jpg"
                                     alt="Farmers using tablet"
                                     width={800}
                                     height={600}
