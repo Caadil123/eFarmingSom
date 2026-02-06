@@ -59,7 +59,7 @@ const IntegratedFuture = () => {
                     {/* Image Section */}
                     <div className="w-full lg:w-1/2 relative min-h-[500px] lg:min-h-full">
                         <Image
-                            src="/assets/simple img.jpeg"
+                            src="/assets/simple-img.jpeg"
                             alt="Sustainable Green Agriculture Platform"
                             fill
                             className="object-cover"

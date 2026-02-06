@@ -48,7 +48,7 @@ import { NewsArticle } from '@/data/news';
 
 export async function fetchPosts(): Promise<NewsArticle[]> {
     try {
-        console.log(`Fetching posts from: ${API_BASE_URL}/posts`);
+        console.log(`Fetching posts from: ${API_BASE_URL}`);
         const response = await fetch(`${API_BASE_URL}/posts`, {
             method: 'GET',
             headers: {
