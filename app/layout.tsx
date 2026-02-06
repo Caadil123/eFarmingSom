@@ -12,6 +12,9 @@ const poppins = Poppins({
 export const metadata: Metadata = {
   title: "eFarmingSom | Fresh Farm Products",
   description: "Connect with local farmers and get fresh produce delivered to your doorstep.",
+  icons: {
+    icon: '/assets/efarming-01.png',
+  },
 };
 
 export default function RootLayout({
