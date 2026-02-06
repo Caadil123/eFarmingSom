@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   title: "eFarmingSom | Fresh Farm Products",
   description: "Connect with local farmers and get fresh produce delivered to your doorstep.",
   icons: {
-    icon: '/efarming-01.png',
+    icon: '/assets/efarming-01.png',
   },
 };
 
