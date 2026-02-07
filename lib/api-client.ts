@@ -2,7 +2,9 @@ import { Project } from '@/data/projects';
 
 // Define the API base URL - using environment variable or default to localhost
 // Note: In Next.js, environment variables prefixed with NEXT_PUBLIC_ are available in the browser
-const API_BASE_URL = process.env.NEXT_PUBLIC_ADMIN_API_URL || 'https://dashboard.efarmingsom.com/api';
+// Define the API base URL - using local API routes
+const API_BASE_URL = '/api';
+const DASHBOARD_URL = process.env.NEXT_PUBLIC_DASHBOARD_URL || 'https://dashboard.efarmingsom.com';
 
 /**
  * Interface representing the Project structure from the Admin API (Prisma model)
@@ -75,8 +77,7 @@ function transformAdminToClientPost(adminPost: AdminPost): NewsArticle {
     // Fix image URL for local uploads
     let imageUrl = adminPost.featuredImage || '/assets/news-placeholder.jpg';
     if (imageUrl.startsWith('/')) {
-        const origin = API_BASE_URL.replace('/api', '');
-        imageUrl = `${origin}${imageUrl}`;
+        imageUrl = `${DASHBOARD_URL}${imageUrl}`;
     }
 
     // Convert API contentSections (JSON) to string array if it exists
@@ -187,12 +188,10 @@ export async function fetchProject(id: string): Promise<Project | null> {
  * Helper to Transform Admin Data Shape -> Client Data Shape
  */
 function transformAdminToClientProject(adminProject: AdminProject): Project {
-    // Fix image URL: If it's a relative path from the admin (local upload), prepend the admin URL
+    // Fix image URL: If it's a relative path from the admin (local upload), prepend the dashboard URL
     let imageUrl = adminProject.coverImageUrl || '/assets/project-placeholder.jpg';
     if (imageUrl.startsWith('/')) {
-        // Remove '/api' from the base URL to get just the origin (e.g., http://localhost:3000)
-        const origin = API_BASE_URL.replace('/api', '');
-        imageUrl = `${origin}${imageUrl}`;
+        imageUrl = `${DASHBOARD_URL}${imageUrl}`;
     }
 
     return {
@@ -250,8 +249,7 @@ export async function fetchTeamMembers(): Promise<AdminTeamMember[]> {
         return members.map(m => {
             let imageUrl = m.imageUrl || '';
             if (imageUrl.startsWith('/')) {
-                const origin = API_BASE_URL.replace('/api', '');
-                imageUrl = `${origin}${imageUrl}`;
+                imageUrl = `${DASHBOARD_URL}${imageUrl}`;
             }
             return { ...m, imageUrl };
         });
@@ -295,8 +293,7 @@ export async function fetchPartners(): Promise<AdminPartner[]> {
         return partners.map(p => {
             let imageUrl = p.imageUrl || '';
             if (imageUrl.startsWith('/')) {
-                const origin = API_BASE_URL.replace('/api', '');
-                imageUrl = `${origin}${imageUrl}`;
+                imageUrl = `${DASHBOARD_URL}${imageUrl}`;
             }
             return { ...p, imageUrl };
         });
