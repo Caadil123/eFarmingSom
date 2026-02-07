@@ -33,7 +33,7 @@ const NewsAndInsightsPage = () => {
         <main className="min-h-screen bg-white font-sans text-gray-900">
             <TopBar />
             <Navbar />
-            <PageHero title="News & Insights" backgroundImage="/assets/newsHeros img.jpeg" />
+            <PageHero title="News & Insights" backgroundImage="/assets/newsHeros-img.jpeg" />
 
             <div className="text-center mb-16 space-y-4 pt-8">
                 <h2 className="text-4xl font-bold text-gray-900">Latest News & Article</h2>

@@ -9,35 +9,35 @@ const testimonials = [
         text: "eFarming's smart irrigation system has increased my crop yield by 40% while reducing water usage. It's been a game-changer for my farm.",
         author: "Ahmed Hassan",
         role: "TOMATO, L. SHABELLE",
-        image: "https://images.unsplash.com/photo-1542385151-efd9000785a0?q=80&w=200&auto=format&fit=crop"
+        image: "/assets/testomonial1.jpeg"
     },
     {
         id: 2,
         text: "The market access program connected me directly with buyers in Mogadishu. I now get fair prices for my produce and can plan my crops better.",
-        author: "Fatima Ali",
+        author: "ZamZam Abdi",
         role: "VEG. FARMER, BAY REGION",
-        image: "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?q=80&w=200&auto=format&fit=crop"
+        image: "/assets/testomonial2.jpeg"
     },
     {
         id: 3,
         text: "The training programs taught me modern farming techniques. My income has doubled in just two years, and I can now support my family better.",
-        author: "Omar Mohamed",
+        author: "Ismail Adam",
         role: "LIVESTOCK, GALGADUUD",
-        image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=200&auto=format&fit=crop"
+        image: "/assets/testomonial3.jpeg"
     },
     {
         id: 4,
         text: "Thanks to the weather alerts, I planted my sorghum at the perfect time. This season's harvest was the best we've had in a decade.",
         author: "Yusuf Ibrahim",
         role: "GRAIN FARMER, BAKOOL",
-        image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=200&auto=format&fit=crop"
+        image: "/assets/testomonial4.jpeg"
     },
     {
         id: 5,
         text: "The cooperative model helped us buy fertilizers in bulk. It significantly lowered our costs and improved our bargaining power.",
-        author: "Amina Gedi",
+        author: "Faarah Gedi",
         role: "CO-OP LEADER, JUBBALAND",
-        image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=200&auto=format&fit=crop"
+        image: "/assets/testomonial5.jpeg"
     },
     {
         id: 6,
