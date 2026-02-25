@@ -4,33 +4,12 @@ import ProjectCard from './ProjectCard';
 import { PROJECTS_DATA } from '@/data/projects';
 
 const ProjectsGrid = () => {
-    // State for projects and loading status
-    const [liveProjects, setLiveProjects] = useState<any[]>([]);
-    const [loading, setLoading] = useState(true);
     const [activeCategory, setActiveCategory] = useState("All");
 
     const categories = ["All", "Sustainability", "Community", "Education", "Technology", "Innovation"];
 
-    // Fetch projects on component mount
-    React.useEffect(() => {
-        async function loadProjects() {
-            try {
-                // Import the fetcher dynamically to avoid server-side issues if any
-                const { fetchProjects } = await import('@/lib/api-client');
-                const data = await fetchProjects();
-                setLiveProjects(data);
-            } catch (error) {
-                console.error("Failed to load live projects", error);
-            } finally {
-                setLoading(false);
-            }
-        }
-        loadProjects();
-    }, []);
-
-    // Combine static and live projects
-    // We only use live projects now as requested
-    const allProjects = [...liveProjects];
+    // Use only static projects now as requested
+    const allProjects = PROJECTS_DATA;
 
     const filteredProjects = activeCategory === "All"
         ? allProjects
@@ -65,24 +44,14 @@ const ProjectsGrid = () => {
                     ))}
                 </div>
 
-                {/* Loading State */}
-                {loading && (
-                    <div className="flex justify-center py-20">
-                        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-emerald-600"></div>
-                    </div>
-                )}
-
                 {/* Grid */}
-                {!loading && (
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        {filteredProjects.map((project, index) => (
-                            // Using index as fallback key because explicit IDs might strictly overlap in rare dev cases
-                            <ProjectCard key={project.id || index} project={project} />
-                        ))}
-                    </div>
-                )}
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    {filteredProjects.map((project, index) => (
+                        <ProjectCard key={project.id || index} project={project} />
+                    ))}
+                </div>
 
-                {!loading && filteredProjects.length === 0 && (
+                {filteredProjects.length === 0 && (
                     <div className="flex flex-col items-center justify-center py-20 text-center px-4">
                         <div className="bg-emerald-50 p-6 rounded-full mb-6">
                             <svg className="w-12 h-12 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -107,3 +76,4 @@ const ProjectsGrid = () => {
 };
 
 export default ProjectsGrid;
+

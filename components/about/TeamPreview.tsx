@@ -1,33 +1,16 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Image from "next/image";
 import { Users, X } from "lucide-react";
-import { fetchTeamMembers, AdminTeamMember } from "@/lib/api-client";
+import { TEAM_DATA, TeamMember } from "@/data/team";
 
 const TeamPreview = () => {
-    const [members, setMembers] = useState<AdminTeamMember[]>([]);
-    const [loading, setLoading] = useState(true);
     const [activeTab, setActiveTab] = useState<"TEAM" | "ADVISOR">("TEAM");
-    const [selectedMember, setSelectedMember] = useState<AdminTeamMember | null>(null);
+    const [selectedMember, setSelectedMember] = useState<TeamMember | null>(null);
 
-    useEffect(() => {
-        async function loadMembers() {
-            try {
-                const data = await fetchTeamMembers();
-                // Filter only active members? The user didn't specify, but usually yes.
-                // Admin dashboard allows setting isActive.
-                setMembers(data.filter(m => m.isActive));
-            } catch (error) {
-                console.error("Failed to load team members", error);
-            } finally {
-                setLoading(false);
-            }
-        }
-        loadMembers();
-    }, []);
-
-    const filteredMembers = members.filter(m => (m.type || "TEAM") === activeTab);
+    const members = TEAM_DATA;
+    const filteredMembers = members.filter(m => (m.type || "TEAM") === activeTab && m.isActive);
 
     return (
         <section className="py-24 bg-white">
@@ -40,7 +23,6 @@ const TeamPreview = () => {
                 {/* Tabs */}
                 <div className="flex justify-center mb-16">
                     <div className="bg-gray-100 p-1 rounded-full inline-flex relative">
-                        {/* Gliding Background (Optional simplified version) */}
                         <button
                             onClick={() => setActiveTab("TEAM")}
                             className={`relative z-10 px-8 py-3 rounded-full text-lg font-bold transition-all duration-300 ${activeTab === "TEAM"
@@ -63,12 +45,8 @@ const TeamPreview = () => {
                 </div>
 
                 {/* Content */}
-                {loading ? (
-                    <div className="flex justify-center py-20">
-                        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-emerald-600"></div>
-                    </div>
-                ) : filteredMembers.length > 0 ? (
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                {filteredMembers.length > 0 ? (
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                         {filteredMembers.map((member) => (
                             <div
                                 key={member.id}
@@ -83,7 +61,7 @@ const TeamPreview = () => {
                                             alt={member.name}
                                             fill
                                             className="object-cover object-top"
-                                            unoptimized={member.imageUrl.startsWith('http')}
+                                            unoptimized={true}
                                         />
                                     ) : (
                                         <div className="absolute inset-0 flex items-center justify-center bg-gray-50 text-gray-400">
@@ -109,7 +87,7 @@ const TeamPreview = () => {
                     </div>
                 ) : (
                     <div className="py-20 text-gray-500 bg-gray-50 rounded-3xl border border-dashed border-gray-200">
-                        <p className="text-lg">No {activeTab === "TEAM" ? "Team activeMembers" : "Advisors"} found.</p>
+                        <p className="text-lg">No {activeTab === "TEAM" ? "Team members" : "Advisors"} found.</p>
                     </div>
                 )}
             </div>
@@ -132,7 +110,7 @@ const TeamPreview = () => {
                                     alt={selectedMember.name}
                                     fill
                                     className="object-cover"
-                                    unoptimized={selectedMember.imageUrl.startsWith('http')}
+                                    unoptimized={true}
                                 />
                             ) : (
                                 <div className="absolute inset-0 flex items-center justify-center bg-gray-300">
@@ -144,7 +122,6 @@ const TeamPreview = () => {
                                 <h3 className="text-3xl font-bold text-white leading-tight">
                                     {selectedMember.name}
                                 </h3>
-                                {/* <p className="text-emerald-400 font-medium mt-1">{selectedMember.title}</p> */}
                             </div>
                         </div>
 
@@ -181,3 +158,4 @@ const TeamPreview = () => {
 };
 
 export default TeamPreview;
+

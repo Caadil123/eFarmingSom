@@ -18,7 +18,7 @@ const ContactSection = () => {
         e.preventDefault();
 
         const { name, email, phone, message } = formData;
-        const companyEmail = "efarmingsomalia@gmail.com";
+        const companyEmail = "info@efarmingsom.com";
         const subject = encodeURIComponent(`New message from ${name}`);
         const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\nPhone: ${phone}\n\nMessage:\n${message}`);
 
@@ -179,7 +179,7 @@ const ContactSection = () => {
                                 </div>
                                 <div>
                                     <h4 className="font-bold text-gray-900 text-lg mb-1">Official Email</h4>
-                                    <a href="mailto:efarmingsomalia@gmail.com" className="text-gray-600 font-medium hover:text-[#00703C] transition-colors">efarmingsomalia@gmail.com</a>
+                                    <a href="mailto:info@efarmingsom.com" className="text-gray-600 font-medium hover:text-[#00703C] transition-colors">info@efarmingsom.com</a>
                                 </div>
                             </div>
                         </div>

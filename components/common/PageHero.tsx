@@ -29,7 +29,7 @@ const PageHero = ({
                         className="object-cover"
                         priority
                         sizes="100vw"
-                        unoptimized={backgroundImage.startsWith('http')}
+                        unoptimized={true}
                     />
                 </div>
                 {/* Standard overlay for both variants - Balanced for visibility */}

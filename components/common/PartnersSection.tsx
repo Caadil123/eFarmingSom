@@ -1,33 +1,10 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
-import { fetchPartners, AdminPartner } from "@/lib/api-client";
+import React from "react";
+import { PARTNERS_DATA } from "@/data/partners";
 
 const PartnersSection = () => {
-    const [partners, setPartners] = useState<AdminPartner[]>([]);
-    const [loading, setLoading] = useState(true);
-
-    useEffect(() => {
-        async function loadPartners() {
-            try {
-                const data = await fetchPartners();
-                setPartners(data);
-            } catch (error) {
-                console.error("Failed to fetch partners:", error);
-            } finally {
-                setLoading(false);
-            }
-        }
-        loadPartners();
-    }, []);
-
-    if (loading) {
-        return (
-            <div className="py-16 flex justify-center items-center">
-                <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-emerald-600"></div>
-            </div>
-        );
-    }
+    const partners = PARTNERS_DATA;
 
     if (partners.length === 0) {
         return null;
@@ -75,3 +52,4 @@ const PartnersSection = () => {
 };
 
 export default PartnersSection;
+

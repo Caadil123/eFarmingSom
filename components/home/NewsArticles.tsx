@@ -2,27 +2,11 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import React, { useState, useEffect } from "react";
-import { fetchPosts } from "@/lib/api-client";
-import { NewsArticle } from "@/data/news";
+import React from "react";
+import { newsArticles } from "@/data/news";
 
 const NewsArticles = () => {
-    const [posts, setPosts] = useState<NewsArticle[]>([]);
-    const [loading, setLoading] = useState(true);
-
-    useEffect(() => {
-        async function loadPosts() {
-            try {
-                const data = await fetchPosts();
-                setPosts(data);
-            } catch (error) {
-                console.error("Failed to load news posts", error);
-            } finally {
-                setLoading(false);
-            }
-        }
-        loadPosts();
-    }, []);
+    const posts = newsArticles;
 
     // Get latest 3 posts
     const displayedPosts = posts.slice(0, 3);
@@ -38,22 +22,15 @@ const NewsArticles = () => {
                     </Link>
                 </div>
 
-                {/* Loading State */}
-                {loading && (
-                    <div className="flex justify-center py-20">
-                        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-emerald-600"></div>
-                    </div>
-                )}
-
                 {/* Empty State */}
-                {!loading && posts.length === 0 && (
+                {posts.length === 0 && (
                     <div className="text-center py-10 mb-10 bg-white rounded-2xl shadow-sm p-8">
                         <h3 className="text-xl font-semibold text-gray-800 mb-2">No Articles Yet</h3>
                         <p className="text-gray-500">Stay tuned! We will be publishing news and insights soon.</p>
                     </div>
                 )}
 
-                {!loading && posts.length > 0 && (
+                {posts.length > 0 && (
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
                         {displayedPosts.map((article) => (
                             <div key={article.id} className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 group flex flex-col h-full">
@@ -63,7 +40,7 @@ const NewsArticles = () => {
                                         alt={article.title}
                                         fill
                                         className="object-cover group-hover:scale-105 transition-transform duration-500"
-                                        unoptimized={article.image.startsWith('http')}
+                                        unoptimized={true}
                                     />
                                 </div>
                                 <div className="p-8 flex flex-col flex-grow">
