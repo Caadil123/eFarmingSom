@@ -23,35 +23,35 @@ export default function AcademyPage() {
         {
             id: 1,
             title: "Youth AgriChampions Program",
-            image: "/assets/agritech-future.png",
+            image: "/assets/acadamy/youth.jpeg",
             description: "A leadership and skills-building program empowering young farmers and agripreneurs with modern agricultural knowledge, digital tools, and innovation skills to lead change in their communities.",
             link: "#"
         },
         {
             id: 2,
             title: "The NextGen of Agriculture Fellowship",
-            image: "/assets/news img (1).png",
+            image: "/assets/acadamy/nextGen.jpeg",
             description: "A competitive fellowship designed to prepare the next generation of agricultural leaders through advanced training in agritech, agribusiness, climate resilience, and value-chain development.",
             link: "#"
         },
         {
             id: 3,
             title: "eFarming Agri Youth Mentorship Program",
-            image: "/assets/our soultion image (1).png",
+            image: "/assets/acadamy/mentorships.jpeg",
             description: "A structured mentorship initiative connecting youth with experienced agronomists, technologists, and agribusiness leaders to support skills transfer, career development, and enterprise growth.",
             link: "#"
         },
         {
             id: 4,
             title: "Climate-Smart Agriculture Program",
-            image: "/assets/agritech-green-future.png",
+            image: "/assets/acadamy/climateSmart.jpeg",
             description: "A specialized program promoting sustainable and climate-resilient farming practices, including soil conservation, water management, efficient input use, and climate risk mitigation.",
             link: "#"
         },
         {
             id: 5,
             title: "GIS in Agriculture Program",
-            image: "/assets/map_img.png.png",
+            image: "/assets/acadamy/gis.jpeg",
             description: "A technology-focused program introducing Geographic Information Systems (GIS) for agriculture, covering farm mapping, land-use planning, crop monitoring, and precision decision-making.",
             link: "#"
         }

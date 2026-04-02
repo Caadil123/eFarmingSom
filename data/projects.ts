@@ -21,7 +21,7 @@ export const PROJECTS_DATA: Project[] = [
         location: 'Garasbaley, Benadir Region',
         description: 'A large-scale, climate-smart greenhouse project focused on modern installation and hands-on farmer training. The project supports year-round vegetable production, water efficiency, and improved farmer income.',
         fullDescription: 'The Deyr Greenhouse Installation & Training Project addresses the critical need for sustainable vegetable production in the Benadir Region. By deploying modern greenhouse structures and drip irrigation systems, we have enabled local farmers to grow crops year-round, independent of erratic rainfall patterns. The project also included intensive hands-on training sessions, empowering farmers with the skills to manage greenhouse environments, pest control, and post-harvest handling.',
-        image: '/assets/project-1-new.jpg',
+        image: '/assets/projects/deyr.jpeg',
         focusAreas: ['Greenhouse installation', 'Drip irrigation', 'Farmer training'],
         client: 'Ministry of Agriculture',
         date: 'October 2025',
@@ -39,7 +39,7 @@ export const PROJECTS_DATA: Project[] = [
         location: 'Middle Shabelle',
         description: 'This project deploys smart irrigation systems and digital advisory tools to optimize water use, monitor soil moisture, and improve crop productivity in water-scarce environments.',
         fullDescription: 'Facing severe water scarcity, the Middle Shabelle region required an innovative solution. Our Smart Irrigation & Precision Farming Project introduced IoT-based soil moisture sensors and automated irrigation controls. Farmers can now monitor their field conditions remotely via a mobile app, ensuring precise water delivery only when needed. This has significantly reduced water wastage and operational costs while boosting crop health.',
-        image: '/assets/project-2-new.jpg',
+        image: '/assets/projects/smart.jpeg',
         focusAreas: ['Precision farming', 'IoT monitoring', 'Climate adaptation'],
         client: 'Somali Innovation Fund',
         date: 'August 2025',
@@ -55,7 +55,7 @@ export const PROJECTS_DATA: Project[] = [
         category: 'Education',
         location: 'Nationwide',
         description: 'A digital agriculture initiative providing farmers with real-time agronomic advice, climate alerts, and best-practice guidance through mobile-friendly platforms and on-ground extension support.',
-        image: '/assets/project-3-new.jpg',
+        image: '/assets/projects/digital.jpeg',
         focusAreas: ['Digital advisory', 'Capacity building', 'Climate-smart farming']
     },
     {
@@ -64,17 +64,8 @@ export const PROJECTS_DATA: Project[] = [
         category: 'Community',
         location: 'Mogadishu & Key Production Areas',
         description: 'This project connects farmers directly with buyers, aggregators, and markets—improving price transparency, reducing post-harvest losses, and increasing farmer incomes.',
-        image: '/assets/project-4-new.jpg',
+        image: '/assets/projects/market.jpeg',
         focusAreas: ['Market linkage', 'Fair pricing', 'Quality grading']
-    },
-    {
-        id: 'access-finance',
-        title: 'Access to Finance & Agricultural Insurance Project',
-        category: 'Innovation',
-        location: 'Selected Farming Communities',
-        description: 'A farmer-focused financial inclusion project providing access to microloans, input financing, and weather-indexed insurance through trusted partners using farm performance data.',
-        image: '/assets/project 5.jpeg',
-        focusAreas: ['Agricultural finance', 'Microinsurance', 'Risk management']
     },
     {
         id: 'youth-women',
@@ -82,7 +73,7 @@ export const PROJECTS_DATA: Project[] = [
         category: 'Community',
         location: 'Urban & Peri-Urban Areas',
         description: 'A skills-development and entrepreneurship project empowering youth and women to participate in agribusiness through training, mentorship, and practical farming programs.',
-        image: '/assets/project-6-new.jpg',
+        image: '/assets/projects/youthwomen.jpeg',
         focusAreas: ['Capacity building', 'Youth & women inclusion', 'Agribusiness']
     }
 ];

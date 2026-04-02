@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { Users, X } from "lucide-react";
+import { User, X } from "lucide-react";
 import { TEAM_DATA, TeamMember } from "@/data/team";
 
 const TeamPreview = () => {
@@ -65,7 +65,7 @@ const TeamPreview = () => {
                                         />
                                     ) : (
                                         <div className="absolute inset-0 flex items-center justify-center bg-gray-50 text-gray-400">
-                                            <Users size={48} className="opacity-40" />
+                                            <User size={48} className="opacity-40" />
                                         </div>
                                     )}
                                 </div>
@@ -114,7 +114,7 @@ const TeamPreview = () => {
                                 />
                             ) : (
                                 <div className="absolute inset-0 flex items-center justify-center bg-gray-300">
-                                    <Users size={64} className="text-gray-400" />
+                                    <User size={64} className="text-gray-400" />
                                 </div>
                             )}
                             {/* Name Overlay on Image (Bottom Left) */}

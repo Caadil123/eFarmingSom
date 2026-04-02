@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useState, useEffect } from "react";
+import { User, X } from "lucide-react";
 
 const testimonials = [
     {
@@ -163,13 +164,17 @@ const NewsTestimonials = () => {
                                                     "{testimonial.text}"
                                                 </p>
                                                 <div className="flex flex-col items-center space-y-3 mt-auto">
-                                                    <div className="relative w-14 h-14 rounded-full overflow-hidden border-2 border-primary/20">
-                                                        <Image
-                                                            src={testimonial.image}
-                                                            alt={testimonial.author}
-                                                            fill
-                                                            className="object-cover"
-                                                        />
+                                                    <div className="relative w-14 h-14 rounded-full overflow-hidden border-2 border-primary/20 flex items-center justify-center bg-gray-100">
+                                                        {testimonial.image && testimonial.image.startsWith('/assets') ? (
+                                                            <Image
+                                                                src={testimonial.image}
+                                                                alt={testimonial.author}
+                                                                fill
+                                                                className="object-cover"
+                                                            />
+                                                        ) : (
+                                                            <User className="text-gray-400 w-8 h-8" />
+                                                        )}
                                                     </div>
                                                     <div>
                                                         <h4 className="font-bold text-gray-900 text-sm">{testimonial.author}</h4>
