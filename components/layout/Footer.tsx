@@ -99,7 +99,7 @@ const Footer = () => {
                 </div>
 
                 <div className="flex flex-col md:flex-row justify-between items-center text-sm text-gray-400">
-                    <p>© {new Date().getFullYear()} Efarming. All Rights Reserved.</p>
+                    <p>© {new Date().getFullYear()} Efarmingsom. All Rights Reserved.</p>
                     <div className="flex gap-6 mt-4 md:mt-0">
                         <Link href="#" className="hover:text-white">Privacy Policy</Link>
                         <Link href="#" className="hover:text-white">Terms of Use</Link>
