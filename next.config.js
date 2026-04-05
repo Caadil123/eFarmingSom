@@ -1,8 +1,16 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'export',
+  output: "export",
+
   images: {
-    unoptimized: true,
+    unoptimized: true, // required for static export
+  },
+
+  reactStrictMode: true,
+
+  // optional but helps avoid some stale issues
+  generateBuildId: async () => {
+    return Date.now().toString();
   },
 };
 
